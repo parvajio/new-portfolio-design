@@ -95,8 +95,10 @@
   .shutter-wrap.peek .half.left{transform:translateX(-9%)}
   .shutter-wrap.peek .half.right{transform:translateX(9%)}
   @media (prefers-reduced-motion:reduce){.half,.reveal .s1,.reveal .s2,.reveal::after{transition:none}.reveal .s1,.reveal .s2{transform:none;opacity:1}.reveal::after{display:none}.shutter-wrap.peek .half{transform:none}}
-  .desc{max-width:620px;margin:26px auto 0;color:var(--body-text);font-size:16px;line-height:26px}
+  .desc{max-width:640px;margin:26px auto 0;color:var(--body-text);font-size:16px;line-height:26px}
   .desc b{color:var(--white);font-weight:600} .desc em{color:var(--primary);font-style:normal;font-weight:600}
+  .desc-head{display:block;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(22px,3.2vw,30px);line-height:1.25;letter-spacing:-.02em;color:var(--white)}
+  .desc-sub{display:block;margin-top:8px;font-size:15px;line-height:24px;color:var(--body-text);font-weight:400}
   .stack{display:flex;gap:8px;justify-content:center;margin-top:16px;flex-wrap:wrap}
   .stack span{font-family:'JetBrains Mono';font-size:11px;color:#fff;border:1px solid var(--primary);background:var(--deep);background:linear-gradient(135deg,var(--primary2),var(--deep));border-radius:100px;padding:7px 14px;box-shadow:0 4px 18px var(--glow)}
   .hero-foot{display:flex;justify-content:space-between;align-items:flex-end;padding:28px 48px 32px;position:relative;z-index:2}
@@ -185,8 +187,8 @@
         <span class="half right" aria-hidden="true"><span>DEVELOPER</span></span>
       </span>
     </button>
-    <p class="desc">Software engineer building fast Next.js apps with AI integration —<br>clean, human software that ships.</p>
-    <div class="stack"><span>NEXT.JS 14</span><span>AI SDK / LANGCHAIN</span><span>TYPESCRIPT</span><span>POSTGRES + PRISMA</span></div>
+    <p class="desc"><strong class="desc-head">I engineer fast, clean, secure web apps.</strong><span class="desc-sub">Scalable, maintainable, and ready for real users.</span></p>
+    <div class="stack"><span>NEXT.JS</span><span>TYPESCRIPT</span><span>NODE.JS</span><span>POSTGRESQL</span><span>AI SDK</span></div>
   </div>
 </section>
 
