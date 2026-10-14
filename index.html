@@ -52,7 +52,7 @@
   #hero::after{content:'';position:absolute;width:700px;height:380px;left:50%;bottom:-160px;transform:translateX(-50%);background:radial-gradient(closest-side,var(--glow2),transparent 70%);pointer-events:none}
   .grid-lines{position:absolute;inset:0;display:flex;justify-content:space-evenly;pointer-events:none;opacity:.5}
   .grid-lines span{width:1px;background:var(--grid);height:100%}
-  .topbar{display:flex;justify-content:space-between;align-items:center;padding:26px 48px;position:relative;z-index:2}
+  .topbar{display:flex;justify-content:flex-end;align-items:center;padding:26px 48px;position:relative;z-index:2}
   .brand{display:flex;align-items:center;gap:12px}
   .mark{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--deep));color:#fff;font-family:'Space Grotesk';font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 18px var(--glow)}
   .mono{font-family:'JetBrains Mono';font-size:12px;letter-spacing:.14em;color:var(--lav)}
@@ -64,7 +64,7 @@
   .hero-mid.clean .desc{margin-top:22px}
   .hover-cue{display:block;margin-top:10px;font-family:'Instrument Serif';font-style:italic;font-size:15px;color:var(--muted);letter-spacing:.04em;opacity:.8}
   .hover-cue span{color:var(--primary)}
-  .hey{font-family:'Instrument Serif';font-style:italic;font-size:30px;color:var(--lav)}
+  .hey{font-family:'Inter',sans-serif;font-style:normal;font-weight:500;font-size:22px;letter-spacing:-.01em;color:var(--lav)}
   /* shutter — upgraded: depth edges + staggered reveal + single invite peek */
   .shutter-wrap{width:100%;max-width:1080px;margin:22px auto 0;cursor:pointer;border-radius:12px;background:transparent;border:0;font:inherit;color:inherit;touch-action:manipulation;-webkit-tap-highlight-color:transparent;display:block;padding:0;text-align:center}
   .shutter-wrap:focus-visible{outline:2px solid var(--primary);outline-offset:8px;border-radius:12px}
@@ -160,9 +160,7 @@
 <section id="hero">
   <div class="grid-lines"><span></span><span></span><span></span><span></span><span></span></div>
   <div class="topbar">
-    <div class="brand"><div class="mark">P</div><div class="mono">PARVA • FOLIO 2026</div></div>
     <div class="top-right">
-      <div class="pill"><span class="dot"></span> OPEN FOR WORK — NEXT.JS / AI</div>
       <div class="swatches" id="swatches" title="pick accent">
         <span class="sw-label">COLOR</span>
         <button class="swatch active" data-accent="grape" style="background:linear-gradient(135deg,#A78BFA,#6D28D9)" aria-label="grape purple" onclick="setAccent('grape')"></button>
@@ -179,27 +177,16 @@
   </div>
 
   <div class="hero-mid clean">
-    <div class="hey">Hey, I'm Parva —</div>
-    <button type="button" class="shutter-wrap" title="Hover or tap to split" aria-expanded="false" aria-label="Job title — activate to reveal Problem Solver" onclick="toggleShutter(this)">
+    <div class="hey">Hey, I'm Parvaj —</div>
+    <button type="button" class="shutter-wrap" title="Tap to split" aria-expanded="false" aria-label="Job title — activate to reveal Problem Solver" onclick="toggleShutter(this)">
       <span class="shutter" aria-hidden="false">
         <span class="reveal"><span class="s1">Problem</span><span class="s2">SOLVER</span></span>
         <span class="half left" aria-hidden="true"><span>DEVELOPER</span></span>
         <span class="half right" aria-hidden="true"><span>DEVELOPER</span></span>
       </span>
-      <span class="hover-cue" aria-hidden="true"><span>✦</span> hover or tap to split</span>
     </button>
     <p class="desc">Software engineer building fast Next.js apps with AI integration —<br>clean, human software that ships.</p>
     <div class="stack"><span>NEXT.JS 14</span><span>AI SDK / LANGCHAIN</span><span>TYPESCRIPT</span><span>POSTGRES + PRISMA</span></div>
-  </div>
-
-  <div class="hero-foot">
-    <div class="scroll-hint">
-      <button class="thin-arrow" onclick="enterWork()" aria-label="scroll to portfolio">
-        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 4v16m0 0l-6-6m6 6l6-6"/></svg>
-      </button>
-      <span>SCROLL ↓ OR PRESS ENTER<br>TO ENTER PORTFOLIO</span>
-    </div>
-    <button class="enter-btn" onclick="enterWork()">ENTER <i>↵</i></button>
   </div>
 </section>
 
