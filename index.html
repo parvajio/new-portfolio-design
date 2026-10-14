@@ -97,7 +97,12 @@
   @media (prefers-reduced-motion:reduce){.half,.reveal .s1,.reveal .s2,.reveal::after{transition:none}.reveal .s1,.reveal .s2{transform:none;opacity:1}.reveal::after{display:none}.shutter-wrap.peek .half{transform:none}}
   .desc{max-width:640px;margin:26px auto 0;color:var(--body-text);font-size:16px;line-height:26px}
   .desc b{color:var(--white);font-weight:600} .desc em{color:var(--primary);font-style:normal;font-weight:600}
-  .desc-head{display:block;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(22px,3.2vw,30px);line-height:1.25;letter-spacing:-.02em;color:var(--white)}
+  .desc-head{display:block;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(22px,3.2vw,30px);line-height:1.25;letter-spacing:-.02em;color:var(--white);text-wrap:balance}
+  /* single combined highlight — fast / clean / secure share ONE class (.feat) per brief */
+  .feat{position:relative;display:inline-block;padding:0 .08em;margin:0 -.08em;color:var(--primary);background:linear-gradient(92deg,var(--primary),var(--primary2) 55%,var(--deep));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;overflow-wrap:break-word}
+  .feat::after{content:attr(data-text);position:absolute;inset:0;padding:0 .08em;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.9) 50%,transparent 58%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;transform:translateX(-120%);animation:feat-sheen 3.8s ease-in-out infinite;animation-delay:var(--d,0s);pointer-events:none;will-change:transform}
+  @keyframes feat-sheen{0%,55%{transform:translateX(-120%)}90%,100%{transform:translateX(120%)}}
+  @media (prefers-reduced-motion:reduce){.feat::after{animation:none;display:none}}
   .desc-sub{display:block;margin-top:8px;font-size:15px;line-height:24px;color:var(--body-text);font-weight:400}
   .stack{display:flex;gap:8px;justify-content:center;margin-top:16px;flex-wrap:wrap}
   .stack span{font-family:'JetBrains Mono';font-size:11px;color:#fff;border:1px solid var(--primary);background:var(--deep);background:linear-gradient(135deg,var(--primary2),var(--deep));border-radius:100px;padding:7px 14px;box-shadow:0 4px 18px var(--glow)}
@@ -187,7 +192,7 @@
         <span class="half right" aria-hidden="true"><span>DEVELOPER</span></span>
       </span>
     </button>
-    <p class="desc"><strong class="desc-head">I engineer fast, clean, secure web apps.</strong><span class="desc-sub">Scalable, maintainable, and ready for real users.</span></p>
+    <p class="desc"><strong class="desc-head">I engineer <span class="feat" data-text="fast,">fast,</span> <span class="feat" data-text="clean," style="--d:.35s">clean,</span> <span class="feat" data-text="secure" style="--d:.7s">secure</span> web apps.</strong><span class="desc-sub">Scalable, maintainable, and ready for real users.</span></p>
     <div class="stack"><span>NEXT.JS</span><span>TYPESCRIPT</span><span>NODE.JS</span><span>POSTGRESQL</span><span>AI SDK</span></div>
   </div>
 </section>
