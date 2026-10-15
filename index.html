@@ -324,11 +324,12 @@
   function goHero(){window.scrollTo({top:0,behavior:'smooth'});resetHard();}
   document.addEventListener('keydown',e=>{if(e.key==='Enter'&&!(e.target&&e.target.closest&&e.target.closest('.shutter-wrap'))&&window.scrollY<window.innerHeight/2)enterWork();});
 
-  // hard-scroll back: accumulate upward wheel at top of portfolio — floating ring % only
+  // hard-scroll back: floating ring % only — visible while scrolling, reset in hero
   let acc=0; const NEED=1400; const ring=document.getElementById('ring'), pct=document.getElementById('pct'), progressWrap=document.getElementById('scrollProgress');
   let hideT;
   function resetHard(){acc=0;if(ring)ring.style.strokeDashoffset=119.4;if(pct)pct.textContent='0%';if(progressWrap)progressWrap.classList.remove('show');clearTimeout(hideT);}
-  function pokeHide(){clearTimeout(hideT);hideT=setTimeout(()=>{if(acc<=0&&progressWrap)progressWrap.classList.remove('show');},1600);}
+  function flashShow(){if(!progressWrap)return;progressWrap.classList.add('show');clearTimeout(hideT);hideT=setTimeout(()=>progressWrap.classList.remove('show'),700);}
+  window.addEventListener('scroll',()=>{if(window.scrollY<20)resetHard();},{passive:true});
   window.addEventListener('wheel',e=>{
     const workTop=document.getElementById('work').offsetTop;
     const nearTop = window.scrollY>=workTop-40 && window.scrollY<=workTop+120;
@@ -337,7 +338,7 @@
       const p=Math.min(1,acc/NEED);
       ring.style.strokeDashoffset=(119.4*(1-p)).toFixed(1);
       pct.textContent=Math.round(p*100)+'%';
-      if(p>0&&p<1){progressWrap.classList.add('show');pokeHide();}
+      if(p>0&&p<1){flashShow();}
       if(p>=1){goHero();}
     } else if(window.scrollY<10 && e.deltaY>60){ /* allow natural down */ }
   },{passive:false});
