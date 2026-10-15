@@ -33,6 +33,29 @@
   html[data-theme="light"][data-accent="blue"]{--primary:#2563EB;--primary2:#3B82F6;--deep:#1D4ED8;--glow:rgba(37,99,235,.24);--glow2:rgba(59,130,246,.2)}
   html[data-theme="light"][data-accent="teal"]{--primary:#0D9488;--primary2:#14B8A6;--deep:#0F766E;--glow:rgba(20,184,166,.26);--glow2:rgba(15,118,110,.2)}
   html[data-theme="light"][data-accent="green"]{--primary:#059669;--primary2:#10B981;--deep:#047857;--glow:rgba(16,185,129,.26);--glow2:rgba(4,120,87,.2)}
+  /* ---- calmer dark (override) ---- */
+  html[data-theme="dark"]{
+    --bg:#100D1C;
+    --white:#E4E0F2;
+    --lav:#CFC6EE;
+    --body-text:#B5ACD6;
+    --card-text:#A59CC8;
+    --muted:#8D86AE;
+    --grid:#231D45;
+    --glow:rgba(139,92,246,.20);
+    --glow2:rgba(109,40,217,.16);
+  }
+  html[data-theme="dark"] .grid-lines{opacity:.35}
+  html[data-theme="dark"] .feat::after{
+    background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.5) 50%,transparent 58%);
+    -webkit-background-clip:text;background-clip:text;
+  }
+  /* accent glows must be re-declared (they have higher specificity) */
+  html[data-theme="dark"][data-accent="grape"]{--glow:rgba(139,92,246,.20);--glow2:rgba(109,40,217,.16)}
+  html[data-theme="dark"][data-accent="ultra"]{--glow:rgba(192,132,252,.22);--glow2:rgba(126,34,206,.18)}
+  html[data-theme="dark"][data-accent="blue"]{--glow:rgba(59,130,246,.20);--glow2:rgba(29,78,216,.16)}
+  html[data-theme="dark"][data-accent="teal"]{--glow:rgba(45,212,191,.18);--glow2:rgba(15,118,110,.16)}
+  html[data-theme="dark"][data-accent="green"]{--glow:rgba(52,211,153,.19);--glow2:rgba(4,120,87,.16)}
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--white);font-family:'Inter',sans-serif;overflow-x:hidden;transition:background .35s,color .35s;
     background-image:radial-gradient(800px 400px at 15% 0%,var(--glow2),transparent 70%),radial-gradient(900px 500px at 85% 100%,var(--glow),transparent 70%)}
