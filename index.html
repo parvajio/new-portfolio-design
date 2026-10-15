@@ -152,6 +152,9 @@
   /* work section — Geist Regular for all text */
   #work .col-nav,#work .col-main,#work .col-info,#work .big-title,#work .sub,#work .cards,#work .card,#work .card h3,#work .card p,#work .nav-item,#work .nav-item b,#work .info-box,#work .info-box .stat,#work .mini-profile,#work .kicker,#work .col-nav h4,#work .mono,#work .tags span,#work .info-box h5,#work .nav-item .n,#work .nav-item small{font-family:'Geist','Inter',system-ui,-apple-system,sans-serif !important;font-weight:400 !important;letter-spacing:-.01em}
   #work .big-title{font-weight:400;letter-spacing:-.04em}
+  #work .work-brand{display:flex;align-items:center;gap:14px;font-family:'Geist','Inter',system-ui,-apple-system,sans-serif !important;font-weight:700 !important;font-size:26px !important;letter-spacing:-.045em !important;line-height:1;padding:2px 8px 24px;color:var(--white);flex-shrink:0;white-space:nowrap}
+  #work .work-brand span{font-weight:700 !important;color:var(--muted)}
+  #work .work-avatar{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--deep));display:flex;align-items:center;justify-content:center;font-family:'Geist','Inter',system-ui,-apple-system,sans-serif !important;font-weight:700 !important;font-size:20px !important;letter-spacing:0 !important;color:#fff;flex-shrink:0;box-shadow:0 0 0 5px color-mix(in srgb,var(--primary) 14%,transparent),0 0 22px var(--glow)}
   #work .card h3{font-weight:400;letter-spacing:-.02em}
   #work .kicker,#work .col-nav h4,#work .nav-item .n,#work .nav-item small,#work .tags span,#work .info-box h5{letter-spacing:.02em}
   .scroll-progress{position:fixed;top:18px;left:50%;transform:translateX(-50%) translateY(-80px);background:var(--surface2);background:color-mix(in srgb,var(--surface) 88%,transparent);border:1px solid var(--primary);border-radius:50%;padding:6px;transition:transform .35s ease,opacity .35s ease;z-index:50;opacity:0;pointer-events:none;box-shadow:0 8px 30px var(--glow)}
@@ -160,16 +163,19 @@
   .progress-ring svg{transform:rotate(-90deg)}
   .progress-ring .pct{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono';font-size:10px;color:var(--primary)}
   .cols{display:grid;grid-template-columns:270px 1fr 320px;flex:1;min-height:0}
-  .col-nav{border-right:1px solid var(--line);padding:32px 22px;display:flex;flex-direction:column;gap:8px}
+  .col-nav{border-right:1px solid var(--line);padding:24px 20px;display:flex;flex-direction:column;gap:6px}
   .col-nav h4{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.2em;color:var(--muted);padding:0 12px 12px}
-  .nav-item{display:flex;align-items:center;gap:12px;padding:14px;border-radius:12px;cursor:pointer;border:1px solid transparent;color:var(--body-text);transition:.2s}
-  .nav-item .n{font-family:'JetBrains Mono';font-size:11px;color:var(--muted);width:24px;flex-shrink:0}
-  .nav-item b{font-weight:500;font-size:15px}
-  .nav-item small{margin-left:auto;font-family:'JetBrains Mono';font-size:10px;color:var(--muted)}
-  .nav-item.active{background:linear-gradient(135deg,var(--primary2),var(--deep));border-color:var(--primary);color:#fff;box-shadow:0 6px 24px var(--glow)}
-  .nav-item.active .n{color:#fff}
-  .nav-item.active small{color:#fff}
-  .mini-profile{margin-top:auto;border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--surface);display:flex;gap:12px;align-items:center}
+  .nav-links,.nav-secondary{display:flex;flex-direction:column;gap:6px}
+  .nav-item{display:flex;align-items:center;gap:16px;height:48px;padding:0 16px;border-radius:14px;cursor:pointer;border:0;color:var(--white);text-decoration:none;transition:background .15s ease}
+  .nav-item svg{width:20px;height:20px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+  /* beat the section-wide Geist/400 !important rule with higher specificity */
+  #work .col-nav .nav-item b{font-size:17px;font-weight:500 !important;letter-spacing:-.01em !important;color:inherit}
+  .nav-item:hover{background:color-mix(in srgb,var(--white) 4%,transparent)}
+  .nav-item.active{background:color-mix(in srgb,var(--white) 6%,transparent)}
+  #work .col-nav .nav-item.active b{font-weight:700 !important}
+  .nav-item:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+  .nav-divider{height:1px;background:var(--line);margin:16px 16px}
+  .mini-profile{margin-top:auto;border:0;border-radius:14px;padding:14px;background:var(--surface);display:flex;gap:12px;align-items:center}
   .avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#A78BFA,#6D28D9);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;flex-shrink:0}
   .col-main{padding:36px 40px;overflow-y:auto;max-height:100vh}
   .kicker{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.2em;color:var(--primary)}
@@ -193,7 +199,7 @@
   .up-btn{position:fixed;right:24px;bottom:24px;width:52px;height:52px;border-radius:50%;background:var(--primary);color:var(--on-primary);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(167,139,250,.45);z-index:20}
   .up-btn:hover{transform:translateY(-3px)}
   @media(max-width:1080px){.cols{grid-template-columns:220px 1fr}.col-info{display:none}}
-  @media(max-width:720px){.cols{grid-template-columns:1fr}.col-nav{flex-direction:row;overflow-x:auto}.mini-profile{display:none}.topbar,.hero-foot{padding-left:20px;padding-right:20px}.col-main{padding:24px 20px}.pill{display:none}}
+  @media(max-width:720px){.cols{grid-template-columns:1fr}.col-nav{flex-direction:row;align-items:center;overflow-x:auto;padding:14px 20px;gap:12px}.nav-links{flex-direction:row;gap:4px}.nav-item{padding:0 12px;gap:10px;white-space:nowrap}.nav-divider,.nav-secondary{display:none}#work .work-brand{padding:0 8px 0 0;font-size:20px !important}#work .work-avatar{width:36px;height:36px;font-size:17px !important}.mini-profile{display:none}.topbar,.hero-foot{padding-left:20px;padding-right:20px}.col-main{padding:24px 20px}.pill{display:none}}
   @media(max-width:720px){.shutter-wrap{width:86vw}.half span{font-size:clamp(42px,13.6vw,96px)}.reveal{gap:10px;padding:0 12px}.reveal .s1{font-size:clamp(34px,10.5vw,52px)}.reveal .s2{font-size:clamp(32px,9.8vw,48px)}}
 </style>
 </head>
@@ -235,11 +241,17 @@
 <section id="work">
   <div class="cols">
     <aside class="col-nav">
-      <h4>NAVIGATE</h4>
-      <div class="nav-item active" data-tab="profile"><span class="n">01</span><b>Profile</b><small>●</small></div>
-      <div class="nav-item" data-tab="works"><span class="n">02</span><b>Works</b><small>6</small></div>
-      <div class="nav-item" data-tab="contact"><span class="n">03</span><b>Contact</b><small>↗</small></div>
-      <div class="mini-profile"><div class="avatar">P</div><div><div style="font-size:14px;font-weight:600">Parva Mosharof</div><div class="mono" style="font-size:10px;color:var(--muted)">DHAKA • UTC+6</div></div></div>
+      <div class="work-brand"><div class="work-avatar">P</div><div>parvajio<span>.dev</span></div></div>
+      <nav class="nav-links" aria-label="Main">
+        <div class="nav-item active" data-tab="profile" role="button" tabindex="0" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"/></svg><b>Profile</b></div>
+        <div class="nav-item" data-tab="works" role="button" tabindex="0"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg><b>Projects</b></div>
+        <div class="nav-item" data-tab="contact" role="button" tabindex="0"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><b>Contact</b></div>
+      </nav>
+      <div class="nav-divider" role="separator"></div>
+      <div class="nav-secondary">
+        <a class="nav-item" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m16 6 4 14"/><path d="M12 6v14"/><path d="M8 8v12"/><path d="M4 4v16"/></svg><b>Library</b></a>
+      </div>
+      <div class="mini-profile"><div class="avatar">P</div><div><div style="font-size:13px;font-weight:600">Parva Mosharof</div><div class="mono" style="font-size:10px;color:var(--muted)">DHAKA • UTC+6</div></div></div>
     </aside>
 
     <main class="col-main" id="mainCol">
@@ -325,10 +337,11 @@
     wc.appendChild(el);
   });
 
-  const tabs=document.querySelectorAll('.nav-item');
+  const tabs=document.querySelectorAll('.nav-item[data-tab]');
   function setInfo(k,html){document.getElementById('infoKicker').textContent=k;document.getElementById('infoBody').innerHTML=html;}
+  tabs.forEach(t=>t.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();e.stopPropagation();t.click();}}));
   tabs.forEach(t=>t.onclick=()=>{
-    tabs.forEach(x=>x.classList.remove('active'));t.classList.add('active');
+    tabs.forEach(x=>{x.classList.remove('active');x.removeAttribute('aria-current');});t.classList.add('active');t.setAttribute('aria-current','page');
     ['profile','works','contact'].forEach(k=>document.getElementById('tab-'+k).style.display = k===t.dataset.tab?'block':'none');
     if(t.dataset.tab==='profile')setInfo('ABOUT — PROFILE',`<div class="stat"><span>Stack</span><b>Next.js / TS / AI</b></div><div class="stat"><span>Exp.</span><b>3+ yrs shipping</b></div><div class="stat"><span>Focus</span><b>RAG + SaaS</b></div><p style="margin-top:14px;color:var(--card-text);font-size:13px;line-height:22px">Software engineer — Next.js + AI integration.</p>`);
     if(t.dataset.tab==='contact')setInfo('ABOUT — CONTACT',`<div class="stat"><span>Email</span><b>hello@parva.dev</b></div><div class="stat"><span>Reply</span><b>&lt; 24 hours</b></div><div class="stat"><span>Status</span><b>Open for work</b></div>`);
